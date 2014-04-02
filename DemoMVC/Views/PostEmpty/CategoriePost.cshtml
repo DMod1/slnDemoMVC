@@ -1,0 +1,139 @@
+﻿@model DemoMVC.ViewModels.CategoriesPostsCommentsVM
+
+@{
+    ViewBag.Title = "CategoriePost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categories</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Categories.FirstOrDefault().Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in @Model.Categories)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Select", "CategoriePost", new { idCategory = item.CategoryID })
+            </td>
+        </tr>
+    }
+
+</table>
+@if (Model.Posts != null && Model.Posts.Count > 0)
+{
+    <h2>Posts</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Posts.First().CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posts.First().PublishedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posts.First().LastDateReading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posts.First().LastModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posts.First().DeletedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posts.First().NumberOfReading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posts.First().Resume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posts.First().Category.Description)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Posts)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublishedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastDateReading)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastModifiedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeletedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfReading)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Select", "CategoriePost", new {idCategory = item.CategoryID, idPost = item.PostID })
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+@if (Model.Comments != null && Model.Comments.Count > 0)
+{
+    <h2>Comments</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments.First().Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments.First().content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments.First().Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments.First().Post.Resume)
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Comments)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Post.Resume)
+                </td>
+            </tr>
+        }
+
+    </table>
+}

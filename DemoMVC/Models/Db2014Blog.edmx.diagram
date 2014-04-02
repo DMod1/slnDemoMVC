@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="391258bca56243d9a1954993610eea8c" Name="Diagram1">
+        <EntityTypeShape EntityType="Db2014BlogCodeFirstModel.Category" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db2014BlogCodeFirstModel.Comment" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db2014BlogCodeFirstModel.Element" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db2014BlogCodeFirstModel.Post" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Db2014BlogCodeFirstModel.Tag" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Db2014BlogCodeFirstModel.FK_dbo_Posts_dbo_Categories_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="Db2014BlogCodeFirstModel.FK_Comment_To_POST" ManuallyRouted="false" />
+        <AssociationConnector Association="Db2014BlogCodeFirstModel.FK_dbo_Elements_dbo_Posts_PostID" ManuallyRouted="false" />
+        <AssociationConnector Association="Db2014BlogCodeFirstModel.PostTag" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

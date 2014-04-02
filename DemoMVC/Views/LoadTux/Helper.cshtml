@@ -1,0 +1,14 @@
+﻿@using DemoMVC.HtmlHelpers;
+@{
+    ViewBag.Title = "Helper";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Helper</h2>
+
+@using (@Html.BeginForm("Helper", "LoadTux", FormMethod.Post))
+{
+    @Html.DropDownList("lstItem")
+    @Html.Submit("Afficher l'image")
+    @Html.Image(@ViewBag.PathImg as string, "Pas de club selectionné")
+}

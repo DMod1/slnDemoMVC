@@ -1,0 +1,76 @@
+﻿@model IEnumerable<DemoMVC.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PublishedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastDateReading)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeletedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfReading)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PublishedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastDateReading)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeletedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfReading)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PostID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PostID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PostID })
+        </td>
+    </tr>
+}
+
+</table>

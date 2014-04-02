@@ -1,0 +1,25 @@
+﻿@model DemoMVC.ViewModels.CategoriesPostsCommentsVM
+
+@{
+    ViewBag.Title = "CategoriePostVersionPartial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CategoriePostVersionPartial</h2>
+
+<div>
+    <h4>CategoriesPostsCommentsVM</h4>
+</div>
+@*Liste de mes catégorie*@
+@Html.Partial("categories", Model.Categories)
+
+@*Liste de mes posts*@
+@if (Model.Posts != null)
+{
+    @Html.Partial("posts", Model.Posts)
+}
+    @*Liste de mes Comments*@
+    @if (Model.Comments != null)
+    {
+        @Html.Partial("comments", Model.Comments)
+    }

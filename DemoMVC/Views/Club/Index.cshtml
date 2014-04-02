@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <h1>Which clus will win the French First league ?</h1>
+    foreach (var club in ViewBag.leagueOne as List<string>)
+    {
+         @Html.RadioButton("club", club, club == "PSG")@club <br>
+    }
+    
+    <input type="submit" value="Action"/>
+
+}

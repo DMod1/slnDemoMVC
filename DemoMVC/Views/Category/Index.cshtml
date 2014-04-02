@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (@Html.BeginForm("Index", "Category", FormMethod.Post))
+{
+    @Html.DropDownList("lstCategory")
+    @Html.ActionLink("Create", "Create")
+    @*@Html.Submit("Afficher l'image")
+    @Html.Image(@ViewBag.PathImg as string, "Pas de club selectionné")*@
+}

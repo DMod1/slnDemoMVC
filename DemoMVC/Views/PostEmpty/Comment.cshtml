@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DemoMVC.Models.Comment>
+
+@{
+    ViewBag.Title = "Comment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Comment</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Post.Resume)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Post.Resume)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CommentId })
+        </td>
+    </tr>
+}
+
+</table>

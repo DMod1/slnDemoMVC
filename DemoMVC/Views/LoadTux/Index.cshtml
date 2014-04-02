@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<form method="post">
+    <select name="cboTux" id="cboTux">
+        @foreach (var item in ViewBag.Data)
+        {
+            <option @(ViewBag.Selected == item ? "selected=\"selected\"" : "") >@item</option>
+        }
+    </select>
+    <input id="cmdAfficherImg" type="submit" value="Afficher l'image" />
+    <img src="@ViewBag.PathImg" />
+</form>

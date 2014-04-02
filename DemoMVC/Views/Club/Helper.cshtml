@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Helper";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Helper</h2>
+
+@using (@Html.BeginForm("DemoLittlePraticeBest", "razor", FormMethod.Post))
+{
+    @Html.DropDownList("lstImages")
+    @Html.Submit("Afficher l'image choisie")
+    @Html.Image(@ViewBag.ImageChoisie as string, "Pas de club selectionné")
+}
